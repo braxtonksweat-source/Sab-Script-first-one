@@ -156,4 +156,118 @@ local bksboostertext = Instance.new("TextLabel", BKsBooster)
 bksboostertext.AnchorPoint = Vector2.new(0.5, 0.5)
 bksboostertext.BackgroundTransparency = 1
 bksboostertext.Position = UDim2.new(0.5089, 0, 0.1234, 0)
-bksbooste
+bksboostertext.Size = UDim2.new(1.0208, 0, 0.3704, 0)
+bksboostertext.Font = Enum.Font.SourceSansBold
+bksboostertext.Text = "BK'S Booster"
+bksboostertext.TextColor3 = Color3.fromRGB(16, 107, 199)
+bksboostertext.TextScaled = true
+bksboostertext.TextWrapped = true
+
+-- ==================== Toggle Button ====================
+local Toggle = Instance.new("TextButton", ScreenGui)
+Toggle.Name = "Toggle"
+Toggle.AnchorPoint = Vector2.new(0.5, 0.5)
+Toggle.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+Toggle.BorderSizePixel = 0
+Toggle.Position = UDim2.new(0.0645, 0, 0.1317, 0)
+Toggle.Size = UDim2.new(0.0999, 0, 0.0949, 0)
+Toggle.Font = Enum.Font.SourceSansBold
+Toggle.Text = "Toggle"
+Toggle.TextColor3 = Color3.fromRGB(1, 9, 162)
+Toggle.TextScaled = true
+Toggle.TextWrapped = true
+
+local UICorner_3 = Instance.new("UICorner", Toggle)
+
+-- ==================== Functionality ====================
+
+-- Drag Function
+local function enableDrag(frame)
+	local UIS = game:GetService("UserInputService")
+	local dragging, dragStart, startPos = false, nil, nil
+	local dragSpeed = 0.25
+
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService("TweenService"):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			updateInput(input)
+		end
+	end)
+end
+
+enableDrag(BKsHub)
+enableDrag(BKsBooster)
+enableDrag(Toggle)
+
+-- Toggle visibility
+Toggle.MouseButton1Click:Connect(function()
+	BKsHub.Visible = not BKsHub.Visible
+	BKsBooster.Visible = not BKsBooster.Visible
+end)
+
+-- Spin + InfJump
+do
+	local spinning, infJump = false, false
+	local char = player.Character or player.CharacterAdded:Wait()
+	local hrp = char:WaitForChild("HumanoidRootPart")
+	local humanoid = char:WaitForChild("Humanoid")
+	local speed = 60
+
+	SpinInfJump.MouseButton1Click:Connect(function()
+		spinning = not spinning
+		infJump = spinning
+		SpinInfJump.Text = spinning and "Spin+InfJump: ON" or "Spin+InfJump: OFF"
+	end)
+
+	game:GetService("UserInputService").JumpRequest:Connect(function()
+		if infJump then
+			humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+		end
+	end)
+
+	task.spawn(function()
+		while true do
+			if spinning then
+				hrp.CFrame = hrp.CFrame * CFrame.Angles(0, math.rad(speed), 0)
+			end
+			task.wait()
+		end
+	end)
+end
+
+-- WalkSpeed Booster
+WalkSpeedBooster.FocusLost:Connect(function()
+	local char = player.Character or player.CharacterAdded:Wait()
+	local humanoid = char:WaitForChild("Humanoid")
+	local value = tonumber(WalkSpeedBooster.Text)
+	if value then
+		humanoid.WalkSpeed = value
+	end
+end)
+
+-- Gravity Booster
+GravityBooster.FocusLost:Connect(function()
+	local value = tonumber(GravityBooster.Text)
+	if value then
+		game:GetService("Workspace").Gravity = value
+	end
+end)
