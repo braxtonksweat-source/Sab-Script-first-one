@@ -1,204 +1,367 @@
--- LocalScript: Fully Local GUI Creation
-
-local player = game.Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui")
-
--- Create ScreenGui
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "BK_Hub_GUI"
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-screenGui.Parent = playerGui
+do
+	local bkSHub = Instance.new("Frame")
+	bkSHub.Name = "BK's Hub"
+	bkSHub.BorderSizePixel = 0
+	bkSHub.Visible = false
+	bkSHub.AnchorPoint = Vector2.one * 0.5
+	bkSHub.Size = UDim2.fromScale(0.1677, 0.4557)
+	bkSHub.Position = UDim2.fromScale(0.4516, 0.6203)
+	bkSHub.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	bkSHub.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+	bkSHub.BorderColor = BrickColor.new("Really black")
+	do
+		local localScript = Instance.new("LocalScript")
+		localScript.Parent = bkSHub
+		local localScript_2 = Instance.new("LocalScript")
+		localScript_2.Parent = bkSHub
+		local uiaspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		uiaspectRatioConstraint.AspectRatio = 0.6899
+		uiaspectRatioConstraint.Parent = bkSHub
+		local uicorner = Instance.new("UICorner")
+		uicorner.CornerRadius = UDim.new(0.05, 0)
+		uicorner.Parent = bkSHub
+		local uistroke = Instance.new("UIStroke")
+		uistroke.Thickness = 7.3
+		uistroke.Color = Color3.fromRGB(255, 255, 255)
+		do
+			local uigradient = Instance.new("UIGradient")
+			uigradient.Color = ColorSequence.new(Color3.fromRGB(1, 1, 154), Color3.fromRGB(0, 89, 255))
+			do
+				local localScript_3 = Instance.new("LocalScript")
+				localScript_3.Parent = uigradient
+			end
+			uigradient.Parent = uistroke
+		end
+		uistroke.Parent = bkSHub
+		local topBar = Instance.new("Frame")
+		topBar.Name = "TopBar"
+		topBar.BorderSizePixel = 0
+		topBar.BackgroundTransparency = 1
+		topBar.Size = UDim2.fromScale(1, 1.0025)
+		topBar.Position = UDim2.fromScale(0, -0.0026)
+		topBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		topBar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+		topBar.BorderColor = BrickColor.new("Really black")
+		do
+			local localScript_4 = Instance.new("LocalScript")
+			localScript_4.Parent = topBar
+			local localScript_5 = Instance.new("LocalScript")
+			localScript_5.Parent = topBar
+			local contentFrame = Instance.new("Frame")
+			contentFrame.Name = "ContentFrame"
+			contentFrame.BorderSizePixel = 0
+			contentFrame.BackgroundTransparency = 1
+			contentFrame.Size = UDim2.fromScale(1, 1)
+			contentFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+			contentFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			contentFrame.BorderColor = BrickColor.new("Really black")
+			contentFrame.Parent = topBar
+		end
+		topBar.Parent = bkSHub
+		local bkSHubLabel = Instance.new("TextLabel")
+		bkSHubLabel.Name = "bk's hub label"
+		bkSHubLabel.Text = "BK'S Hub"
+		bkSHubLabel.TextSize = 49
+		bkSHubLabel.BorderSizePixel = 0
+		bkSHubLabel.BackgroundTransparency = 1
+		bkSHubLabel.TextWrapped = true
+		bkSHubLabel.TextScaled = true
+		bkSHubLabel.AnchorPoint = Vector2.one * 0.5
+		bkSHubLabel.Size = UDim2.fromOffset(216, 31)
+		bkSHubLabel.Position = UDim2.fromScale(0.5205, 0.0829)
+		bkSHubLabel.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
+		bkSHubLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		bkSHubLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		bkSHubLabel.TextColor3 = Color3.fromRGB(16, 107, 199)
+		bkSHubLabel.BorderColor = BrickColor.new("Really black")
+		do
+			local uitextSizeConstraint = Instance.new("UITextSizeConstraint")
+			uitextSizeConstraint.MaxTextSize = 31
+			uitextSizeConstraint.Parent = bkSHubLabel
+		end
+		bkSHubLabel.Parent = bkSHub
+		local spinInfJump = Instance.new("TextButton")
+		spinInfJump.Text = "Spin+InfJump"
+		spinInfJump.Name = "Spin+InfJump"
+		spinInfJump.TextSize = 26
+		spinInfJump.BorderSizePixel = 0
+		spinInfJump.TextScaled = true
+		spinInfJump.TextWrapped = true
+		spinInfJump.AnchorPoint = Vector2.one * 0.5
+		spinInfJump.Position = UDim2.fromScale(0.5083, 0.226)
+		spinInfJump.Size = UDim2.fromScale(0.8819, 0.1471)
+		spinInfJump.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
+		spinInfJump.TextColor3 = Color3.fromRGB(13, 89, 231)
+		spinInfJump.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		spinInfJump.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+		spinInfJump.BorderColor = BrickColor.new("Really black")
+		do
+			local localScript_6 = Instance.new("LocalScript")
+			localScript_6.Parent = spinInfJump
+			local uicorner_2 = Instance.new("UICorner")
+			uicorner_2.Parent = spinInfJump
+			local uistroke_2 = Instance.new("UIStroke")
+			uistroke_2.Thickness = 2.7999
+			uistroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			uistroke_2.Color = Color3.fromRGB(255, 255, 255)
+			do
+				local uigradient_2 = Instance.new("UIGradient")
+				uigradient_2.Color = ColorSequence.new(Color3.fromRGB(19, 15, 231), Color3.fromRGB(51, 139, 255))
+				do
+					local localScript_7 = Instance.new("LocalScript")
+					localScript_7.Parent = uigradient_2
+				end
+				uigradient_2.Parent = uistroke_2
+			end
+			uistroke_2.Parent = spinInfJump
+			local uiaspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+			uiaspectRatioConstraint_2.AspectRatio = 4.0425
+			uiaspectRatioConstraint_2.Parent = spinInfJump
+			local uitextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+			uitextSizeConstraint_2.MaxTextSize = 19
+			uitextSizeConstraint_2.Parent = spinInfJump
+		end
+		spinInfJump.Parent = bkSHub
+	end
+	bkSHub.Parent = screenGui
+	local toggle = Instance.new("TextButton")
+	toggle.Text = "Toggle"
+	toggle.Name = "Toggle"
+	toggle.TextSize = 29
+	toggle.BorderSizePixel = 0
+	toggle.TextScaled = true
+	toggle.TextWrapped = true
+	toggle.AnchorPoint = Vector2.one * 0.5
+	toggle.Position = UDim2.fromScale(0.0645, 0.1317)
+	toggle.Size = UDim2.fromScale(0.0999, 0.0949)
+	toggle.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
+	toggle.TextColor3 = Color3.fromRGB(1, 9, 162)
+	toggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	toggle.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+	toggle.BorderColor = BrickColor.new("Really black")
+	do
+		local localScript_8 = Instance.new("LocalScript")
+		localScript_8.Parent = toggle
+		local uicorner_3 = Instance.new("UICorner")
+		uicorner_3.Parent = toggle
+		local uistroke_3 = Instance.new("UIStroke")
+		uistroke_3.Thickness = 4.8
+		uistroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		uistroke_3.Color = Color3.fromRGB(255, 255, 255)
+		do
+			local uigradient_3 = Instance.new("UIGradient")
+			uigradient_3.Color = ColorSequence.new(Color3.fromRGB(2, 0, 56), Color3.fromRGB(0, 17, 255))
+			uigradient_3.Parent = uistroke_3
+		end
+		uistroke_3.Parent = toggle
+		local uiaspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+		uiaspectRatioConstraint_3.AspectRatio = 2.4615
+		uiaspectRatioConstraint_3.Parent = toggle
+		local uitextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
+		uitextSizeConstraint_3.MaxTextSize = 29
+		uitextSizeConstraint_3.Parent = toggle
+	end
+	toggle.Parent = screenGui
+	local holding = Instance.new("BoolValue")
+	holding.Name = "Holding"
+	holding.Parent = screenGui
+	local bkSHubToggle = Instance.new("LocalScript")
+	bkSHubToggle.Name = "bk's hub toggle"
+	bkSHubToggle.Parent = screenGui
+	local bkSBoosterToggle = Instance.new("LocalScript")
+	bkSBoosterToggle.Name = "bk's booster toggle"
+	bkSBoosterToggle.Parent = screenGui
+	local bkSBooster = Instance.new("Frame")
+	bkSBooster.Name = "BK's Booster"
+	bkSBooster.BorderSizePixel = 0
+	bkSBooster.Visible = false
+	bkSBooster.AnchorPoint = Vector2.one * 0.5
+	bkSBooster.Size = UDim2.fromScale(0.3987, 0.2669)
+	bkSBooster.Position = UDim2.fromScale(0.7551, 0.535)
+	bkSBooster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	bkSBooster.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+	bkSBooster.BorderColor = BrickColor.new("Really black")
+	do
+		local localScript_9 = Instance.new("LocalScript")
+		localScript_9.Parent = bkSBooster
+		local uicorner_4 = Instance.new("UICorner")
+		uicorner_4.Parent = bkSBooster
+		local uistroke_4 = Instance.new("UIStroke")
+		uistroke_4.Thickness = 7.3
+		uistroke_4.Color = Color3.fromRGB(255, 255, 255)
+		do
+			local uigradient_4 = Instance.new("UIGradient")
+			uigradient_4.Color = ColorSequence.new(Color3.fromRGB(0, 100, 154), Color3.fromRGB(0, 9, 85))
+			do
+				local localScript_10 = Instance.new("LocalScript")
+				localScript_10.Parent = uigradient_4
+			end
+			uigradient_4.Parent = uistroke_4
+		end
+		uistroke_4.Parent = bkSBooster
+		local walkSpeedBooster = Instance.new("TextBox")
+		walkSpeedBooster.Name = "WalkSpeed Booster"
+		walkSpeedBooster.Text = ""
+		walkSpeedBooster.PlaceholderText = "29"
+		walkSpeedBooster.TextSize = 29
+		walkSpeedBooster.BorderSizePixel = 0
+		walkSpeedBooster.CursorPosition = -1
+		walkSpeedBooster.TextWrapped = true
+		walkSpeedBooster.TextScaled = true
+		walkSpeedBooster.AnchorPoint = Vector2.one * 0.5
+		walkSpeedBooster.Position = UDim2.fromScale(0.7408, 0.3844)
+		walkSpeedBooster.Size = UDim2.fromScale(0.4484, 0.2299)
+		walkSpeedBooster.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
+		walkSpeedBooster.PlaceholderColor3 = Color3.fromRGB(13, 89, 231)
+		walkSpeedBooster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		walkSpeedBooster.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+		walkSpeedBooster.TextColor3 = Color3.fromRGB(12, 1, 94)
+		walkSpeedBooster.BorderColor = BrickColor.new("Really black")
+		do
+			local localScript_11 = Instance.new("LocalScript")
+			localScript_11.Parent = walkSpeedBooster
+			local uicorner_5 = Instance.new("UICorner")
+			uicorner_5.Parent = walkSpeedBooster
+			local uistroke_5 = Instance.new("UIStroke")
+			uistroke_5.Thickness = 7.3
+			uistroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			uistroke_5.Color = Color3.fromRGB(255, 255, 255)
+			do
+				local uigradient_5 = Instance.new("UIGradient")
+				uigradient_5.Color = ColorSequence.new(Color3.fromRGB(0, 100, 154), Color3.fromRGB(0, 9, 85))
+				do
+					local localScript_12 = Instance.new("LocalScript")
+					localScript_12.Parent = uigradient_5
+				end
+				uigradient_5.Parent = uistroke_5
+			end
+			uistroke_5.Parent = walkSpeedBooster
+			local textLabel = Instance.new("TextLabel")
+			textLabel.Text = "WalkSpeed"
+			textLabel.TextSize = 84
+			textLabel.BorderSizePixel = 0
+			textLabel.BackgroundTransparency = 1
+			textLabel.TextWrapped = true
+			textLabel.TextScaled = true
+			textLabel.AnchorPoint = Vector2.one * 0.5
+			textLabel.Size = UDim2.fromOffset(139, 48)
+			textLabel.Position = UDim2.fromScale(-0.6296, 0.4611)
+			textLabel.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
+			textLabel.BorderColor3 = Color3.fromRGB(4, 12, 91)
+			textLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			textLabel.TextColor3 = Color3.fromRGB(16, 107, 199)
+			textLabel.BorderColor = BrickColor.new("Navy blue")
+			do
+				local uitextSizeConstraint_4 = Instance.new("UITextSizeConstraint")
+				uitextSizeConstraint_4.MaxTextSize = 34
+				uitextSizeConstraint_4.Parent = textLabel
+			end
+			textLabel.Parent = walkSpeedBooster
+			local uiaspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+			uiaspectRatioConstraint_4.AspectRatio = 5.4615
+			uiaspectRatioConstraint_4.Parent = walkSpeedBooster
+			local uitextSizeConstraint_5 = Instance.new("UITextSizeConstraint")
+			uitextSizeConstraint_5.MaxTextSize = 29
+			uitextSizeConstraint_5.Parent = walkSpeedBooster
+		end
+		walkSpeedBooster.Parent = bkSBooster
+		local gravityBooster = Instance.new("TextBox")
+		gravityBooster.Name = "Gravity Booster"
+		gravityBooster.Text = ""
+		gravityBooster.PlaceholderText = "120"
+		gravityBooster.TextSize = 29
+		gravityBooster.BorderSizePixel = 0
+		gravityBooster.CursorPosition = -1
+		gravityBooster.TextWrapped = true
+		gravityBooster.TextScaled = true
+		gravityBooster.AnchorPoint = Vector2.one * 0.5
+		gravityBooster.Position = UDim2.fromScale(0.7383, 0.7806)
+		gravityBooster.Size = UDim2.fromScale(0.469, 0.2404)
+		gravityBooster.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
+		gravityBooster.PlaceholderColor3 = Color3.fromRGB(13, 89, 231)
+		gravityBooster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		gravityBooster.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+		gravityBooster.TextColor3 = Color3.fromRGB(12, 1, 94)
+		gravityBooster.BorderColor = BrickColor.new("Really black")
+		do
+			local localScript_13 = Instance.new("LocalScript")
+			localScript_13.Parent = gravityBooster
+			local textLabel_2 = Instance.new("TextLabel")
+			textLabel_2.Text = "Gravity"
+			textLabel_2.TextSize = 45
+			textLabel_2.BorderSizePixel = 0
+			textLabel_2.BackgroundTransparency = 1
+			textLabel_2.TextWrapped = true
+			textLabel_2.TextScaled = true
+			textLabel_2.AnchorPoint = Vector2.one * 0.5
+			textLabel_2.Size = UDim2.fromOffset(123, 34)
+			textLabel_2.Position = UDim2.fromScale(-0.6177, 0.4287)
+			textLabel_2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
+			textLabel_2.BorderColor3 = Color3.fromRGB(4, 12, 91)
+			textLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			textLabel_2.TextColor3 = Color3.fromRGB(16, 107, 199)
+			textLabel_2.BorderColor = BrickColor.new("Navy blue")
+			do
+				local uitextSizeConstraint_6 = Instance.new("UITextSizeConstraint")
+				uitextSizeConstraint_6.MaxTextSize = 34
+				uitextSizeConstraint_6.Parent = textLabel_2
+			end
+			textLabel_2.Parent = gravityBooster
+			local uistroke_6 = Instance.new("UIStroke")
+			uistroke_6.Thickness = 7.3
+			uistroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			uistroke_6.Color = Color3.fromRGB(255, 255, 255)
+			do
+				local uigradient_6 = Instance.new("UIGradient")
+				uigradient_6.Color = ColorSequence.new(Color3.fromRGB(0, 100, 154), Color3.fromRGB(0, 9, 85))
+				do
+					local localScript_14 = Instance.new("LocalScript")
+					localScript_14.Parent = uigradient_6
+				end
+				uigradient_6.Parent = uistroke_6
+			end
+			uistroke_6.Parent = gravityBooster
+			local uicorner_6 = Instance.new("UICorner")
+			uicorner_6.Parent = gravityBooster
+			local uitextSizeConstraint_7 = Instance.new("UITextSizeConstraint")
+			uitextSizeConstraint_7.MaxTextSize = 29
+			uitextSizeConstraint_7.Parent = gravityBooster
+			local uiaspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+			uiaspectRatioConstraint_5.AspectRatio = 5.4615
+			uiaspectRatioConstraint_5.Parent = gravityBooster
+		end
+		gravityBooster.Parent = bkSBooster
+		local bkSBoosterText = Instance.new("TextLabel")
+		bkSBoosterText.Name = "bk's booster text"
+		bkSBoosterText.Text = "BK'S Booster"
+		bkSBoosterText.TextSize = 13
+		bkSBoosterText.BorderSizePixel = 0
+		bkSBoosterText.BackgroundTransparency = 1
+		bkSBoosterText.TextWrapped = true
+		bkSBoosterText.TextScaled = true
+		bkSBoosterText.AnchorPoint = Vector2.one * 0.5
+		bkSBoosterText.Size = UDim2.fromScale(1.0208, 0.3704)
+		bkSBoosterText.Position = UDim2.fromScale(0.5088, 0.1234)
+		bkSBoosterText.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
+		bkSBoosterText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		bkSBoosterText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		bkSBoosterText.TextColor3 = Color3.fromRGB(16, 107, 199)
+		bkSBoosterText.BorderColor = BrickColor.new("Really black")
+		do
+			local uitextSizeConstraint_8 = Instance.new("UITextSizeConstraint")
+			uitextSizeConstraint_8.MaxTextSize = 38
+			uitextSizeConstraint_8.Parent = bkSBoosterText
+		end
+		bkSBoosterText.Parent = bkSBooster
+		local uiaspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
+		uiaspectRatioConstraint_6.AspectRatio = 2.7999
+		uiaspectRatioConstraint_6.Parent = bkSBooster
+	end
+	bkSBooster.Parent = screenGui
+end
 
--- ===== BK's Hub =====
-local bkSHub = Instance.new("Frame")
-bkSHub.Name = "BK's Hub"
-bkSHub.Size = UDim2.fromScale(0.1677, 0.4557)
-bkSHub.Position = UDim2.fromScale(0.4516, 0.6203)
-bkSHub.AnchorPoint = Vector2.one * 0.5
-bkSHub.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
-bkSHub.BorderSizePixel = 0
-bkSHub.Visible = false
-bkSHub.Parent = screenGui
-
--- UI Constraints & Effects
-local bkHubAspect = Instance.new("UIAspectRatioConstraint", bkSHub)
-bkHubAspect.AspectRatio = 0.6899
-
-local bkHubCorner = Instance.new("UICorner", bkSHub)
-bkHubCorner.CornerRadius = UDim.new(0.05, 0)
-
-local bkHubStroke = Instance.new("UIStroke", bkSHub)
-bkHubStroke.Thickness = 7.3
-bkHubStroke.Color = Color3.fromRGB(255, 255, 255)
-
-local bkHubGradient = Instance.new("UIGradient", bkHubStroke)
-bkHubGradient.Color = ColorSequence.new(Color3.fromRGB(1, 1, 154), Color3.fromRGB(0, 89, 255))
-
--- TopBar
-local topBar = Instance.new("Frame", bkSHub)
-topBar.Name = "TopBar"
-topBar.Size = UDim2.fromScale(1, 1.0025)
-topBar.Position = UDim2.fromScale(0, -0.0026)
-topBar.BackgroundTransparency = 1
-topBar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-topBar.BorderSizePixel = 0
-
-local contentFrame = Instance.new("Frame", topBar)
-contentFrame.Name = "ContentFrame"
-contentFrame.Size = UDim2.fromScale(1, 1)
-contentFrame.BackgroundTransparency = 1
-
--- Hub Label
-local bkSHubLabel = Instance.new("TextLabel", bkSHub)
-bkSHubLabel.Name = "bk's hub label"
-bkSHubLabel.Text = "BK'S Hub"
-bkSHubLabel.TextSize = 49
-bkSHubLabel.TextScaled = true
-bkSHubLabel.TextWrapped = true
-bkSHubLabel.AnchorPoint = Vector2.one * 0.5
-bkSHubLabel.Size = UDim2.fromOffset(216, 31)
-bkSHubLabel.Position = UDim2.fromScale(0.5205, 0.0829)
-bkSHubLabel.Font = Enum.Font.SourceSansBold
-bkSHubLabel.TextColor3 = Color3.fromRGB(16, 107, 199)
-bkSHubLabel.BackgroundTransparency = 1
-
-local hubLabelConstraint = Instance.new("UITextSizeConstraint", bkSHubLabel)
-hubLabelConstraint.MaxTextSize = 31
-
--- Spin+InfJump Button
-local spinInfJump = Instance.new("TextButton", bkSHub)
-spinInfJump.Name = "Spin+InfJump"
-spinInfJump.Text = "Spin+InfJump"
-spinInfJump.TextSize = 26
-spinInfJump.TextScaled = true
-spinInfJump.TextWrapped = true
-spinInfJump.AnchorPoint = Vector2.one * 0.5
-spinInfJump.Position = UDim2.fromScale(0.5083, 0.226)
-spinInfJump.Size = UDim2.fromScale(0.8819, 0.1471)
-spinInfJump.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-spinInfJump.TextColor3 = Color3.fromRGB(13, 89, 231)
-spinInfJump.BorderSizePixel = 0
-
-local spinCorner = Instance.new("UICorner", spinInfJump)
-local spinStroke = Instance.new("UIStroke", spinInfJump)
-spinStroke.Thickness = 2.8
-spinStroke.Color = Color3.fromRGB(255, 255, 255)
-
-local spinGradient = Instance.new("UIGradient", spinStroke)
-spinGradient.Color = ColorSequence.new(Color3.fromRGB(19, 15, 231), Color3.fromRGB(51, 139, 255))
-
-local spinAspect = Instance.new("UIAspectRatioConstraint", spinInfJump)
-spinAspect.AspectRatio = 4.0425
-
-local spinTextConstraint = Instance.new("UITextSizeConstraint", spinInfJump)
-spinTextConstraint.MaxTextSize = 19
-
--- ===== BK's Booster =====
-local bkSBooster = Instance.new("Frame")
-bkSBooster.Name = "BK's Booster"
-bkSBooster.Size = UDim2.fromScale(0.3987, 0.2669)
-bkSBooster.Position = UDim2.fromScale(0.7551, 0.535)
-bkSBooster.AnchorPoint = Vector2.one * 0.5
-bkSBooster.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
-bkSBooster.BorderSizePixel = 0
-bkSBooster.Visible = false
-bkSBooster.Parent = screenGui
-
-local boosterCorner = Instance.new("UICorner", bkSBooster)
-local boosterStroke = Instance.new("UIStroke", bkSBooster)
-boosterStroke.Thickness = 7.3
-boosterStroke.Color = Color3.fromRGB(255, 255, 255)
-
-local boosterGradient = Instance.new("UIGradient", boosterStroke)
-boosterGradient.Color = ColorSequence.new(Color3.fromRGB(0, 100, 154), Color3.fromRGB(0, 9, 85))
-
--- WalkSpeed Booster
-local walkSpeedBooster = Instance.new("TextBox", bkSBooster)
-walkSpeedBooster.Name = "WalkSpeed Booster"
-walkSpeedBooster.PlaceholderText = "29"
-walkSpeedBooster.TextSize = 29
-walkSpeedBooster.TextScaled = true
-walkSpeedBooster.TextWrapped = true
-walkSpeedBooster.AnchorPoint = Vector2.one * 0.5
-walkSpeedBooster.Position = UDim2.fromScale(0.7408, 0.3844)
-walkSpeedBooster.Size = UDim2.fromScale(0.4484, 0.2299)
-walkSpeedBooster.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-walkSpeedBooster.TextColor3 = Color3.fromRGB(12, 1, 94)
-walkSpeedBooster.BorderSizePixel = 0
-
-local wsCorner = Instance.new("UICorner", walkSpeedBooster)
-local wsStroke = Instance.new("UIStroke", walkSpeedBooster)
-wsStroke.Thickness = 7.3
-wsStroke.Color = Color3.fromRGB(255, 255, 255)
-local wsGradient = Instance.new("UIGradient", wsStroke)
-wsGradient.Color = ColorSequence.new(Color3.fromRGB(0, 100, 154), Color3.fromRGB(0, 9, 85))
-
-local wsLabel = Instance.new("TextLabel", walkSpeedBooster)
-wsLabel.Text = "WalkSpeed"
-wsLabel.TextSize = 84
-wsLabel.TextScaled = true
-wsLabel.TextWrapped = true
-wsLabel.AnchorPoint = Vector2.one * 0.5
-wsLabel.Position = UDim2.fromScale(-0.6296, 0.4611)
-wsLabel.Size = UDim2.fromOffset(139, 48)
-wsLabel.BackgroundTransparency = 1
-wsLabel.TextColor3 = Color3.fromRGB(16, 107, 199)
-wsLabel.Font = Enum.Font.SourceSansBold
-
--- Gravity Booster
-local gravityBooster = Instance.new("TextBox", bkSBooster)
-gravityBooster.Name = "Gravity Booster"
-gravityBooster.PlaceholderText = "120"
-gravityBooster.TextSize = 29
-gravityBooster.TextScaled = true
-gravityBooster.TextWrapped = true
-gravityBooster.AnchorPoint = Vector2.one * 0.5
-gravityBooster.Position = UDim2.fromScale(0.7383, 0.7806)
-gravityBooster.Size = UDim2.fromScale(0.469, 0.2404)
-gravityBooster.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-gravityBooster.TextColor3 = Color3.fromRGB(12, 1, 94)
-gravityBooster.BorderSizePixel = 0
-
-local gravityCorner = Instance.new("UICorner", gravityBooster)
-local gravityStroke = Instance.new("UIStroke", gravityBooster)
-gravityStroke.Thickness = 7.3
-gravityStroke.Color = Color3.fromRGB(255, 255, 255)
-
-local gravityGradient = Instance.new("UIGradient", gravityStroke)
-gravityGradient.Color = ColorSequence.new(Color3.fromRGB(0, 100, 154), Color3.fromRGB(0, 9, 85))
-
--- Booster Label
-local boosterLabel = Instance.new("TextLabel", bkSBooster)
-boosterLabel.Text = "BK'S Booster"
-boosterLabel.TextScaled = true
-boosterLabel.TextWrapped = true
-boosterLabel.AnchorPoint = Vector2.one * 0.5
-boosterLabel.Position = UDim2.fromScale(0.5088, 0.1234)
-boosterLabel.Size = UDim2.fromScale(1.0208, 0.3704)
-boosterLabel.BackgroundTransparency = 1
-boosterLabel.TextColor3 = Color3.fromRGB(16, 107, 199)
-boosterLabel.Font = Enum.Font.SourceSansBold
-
--- ===== Toggle Button =====
-local toggle = Instance.new("TextButton", screenGui)
-toggle.Name = "Toggle"
-toggle.Text = "Toggle"
-toggle.TextScaled = true
-toggle.TextWrapped = true
-toggle.AnchorPoint = Vector2.one * 0.5
-toggle.Position = UDim2.fromScale(0.0645, 0.1317)
-toggle.Size = UDim2.fromScale(0.0999, 0.0949)
-toggle.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-toggle.TextColor3 = Color3.fromRGB(1, 9, 162)
-toggle.BorderSizePixel = 0
-
-local toggleCorner = Instance.new("UICorner", toggle)
-local toggleStroke = Instance.new("UIStroke", toggle)
-toggleStroke.Thickness = 4.8
-toggleStroke.Color = Color3.fromRGB(255, 255, 255)
-
--- Toggle functionality
-toggle.MouseButton1Click:Connect(function()
-	bkSHub.Visible = not bkSHub.Visible
-	bkSBooster.Visible = not bkSBooster.Visible
-end)
+return {
+	screenGui = screenGui,
+}
