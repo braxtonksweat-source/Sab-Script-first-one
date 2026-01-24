@@ -4,14 +4,12 @@ local UIS = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local player = Players.LocalPlayer
 
--- GUI ROOT
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "BKGui"
 ScreenGui.Parent = player:WaitForChild("PlayerGui")
 ScreenGui.ResetOnSpawn = false
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
--- MAIN HUB
 local BKsHub = Instance.new("Frame")
 BKsHub.Name = "BKsHub"
 BKsHub.Parent = ScreenGui
@@ -25,7 +23,6 @@ BKsHub.Visible = false
 Instance.new("UICorner", BKsHub).CornerRadius = UDim.new(0.05,0)
 Instance.new("UIAspectRatioConstraint", BKsHub).AspectRatio = 0.69
 
--- LABEL
 local bkshublabel = Instance.new("TextLabel")
 bkshublabel.Parent = BKsHub
 bkshublabel.AnchorPoint = Vector2.new(0.5,0.5)
@@ -37,7 +34,6 @@ bkshublabel.Font = Enum.Font.SourceSansBold
 bkshublabel.TextScaled = true
 bkshublabel.TextColor3 = Color3.fromRGB(16,107,199)
 
--- AUTO INVIS CLONE BUTTON
 local autoinvisclone = Instance.new("TextButton")
 autoinvisclone.Parent = BKsHub
 autoinvisclone.AnchorPoint = Vector2.new(0.5,0.5)
@@ -50,7 +46,6 @@ autoinvisclone.TextScaled = true
 autoinvisclone.TextColor3 = Color3.fromRGB(13,89,231)
 Instance.new("UICorner", autoinvisclone)
 
--- TOGGLE BUTTON
 local Toggle = Instance.new("TextButton")
 Toggle.Parent = ScreenGui
 Toggle.AnchorPoint = Vector2.new(0.5,0.5)
@@ -63,7 +58,6 @@ Toggle.TextScaled = true
 Toggle.TextColor3 = Color3.fromRGB(1,9,162)
 Instance.new("UICorner", Toggle)
 
--- BOOSTER FRAME
 local BKsBooster = Instance.new("Frame")
 BKsBooster.Parent = ScreenGui
 BKsBooster.AnchorPoint = Vector2.new(0.5,0.5)
@@ -74,7 +68,6 @@ BKsBooster.BorderSizePixel = 0
 BKsBooster.Visible = false
 Instance.new("UICorner", BKsBooster)
 
--- WALK SPEED BOX
 local WalkSpeedBooster = Instance.new("TextBox")
 WalkSpeedBooster.Parent = BKsBooster
 WalkSpeedBooster.Position = UDim2.new(0.74,0,0.384,0)
@@ -84,7 +77,6 @@ WalkSpeedBooster.TextScaled = true
 WalkSpeedBooster.BackgroundColor3 = Color3.fromRGB(29,29,29)
 Instance.new("UICorner", WalkSpeedBooster)
 
--- GRAVITY BOX
 local GravityBooster = Instance.new("TextBox")
 GravityBooster.Parent = BKsBooster
 GravityBooster.Position = UDim2.new(0.738,0,0.78,0)
@@ -94,7 +86,6 @@ GravityBooster.TextScaled = true
 GravityBooster.BackgroundColor3 = Color3.fromRGB(29,29,29)
 Instance.new("UICorner", GravityBooster)
 
--- 🔁 TOGGLE VISIBILITY
 Toggle.MouseButton1Click:Connect(function()
 	BKsHub.Visible = not BKsHub.Visible
 	BKsBooster.Visible = not BKsBooster.Visible
@@ -136,7 +127,6 @@ draggable(BKsHub)
 draggable(BKsBooster)
 draggable(Toggle)
 
--- 🧥 AUTO INVIS + CLONE LOGIC
 local TOOL_1 = "Invisibility Cloak"
 local TOOL_2 = "Quantum Cloner"
 local running = false
@@ -170,7 +160,6 @@ autoinvisclone.MouseButton1Click:Connect(function()
 	running = false
 end)
 
--- 🏃 WALKSPEED
 WalkSpeedBooster.FocusLost:Connect(function()
 	local v = tonumber(WalkSpeedBooster.Text)
 	if v then
@@ -179,7 +168,6 @@ WalkSpeedBooster.FocusLost:Connect(function()
 	end
 end)
 
--- 🌍 GRAVITY
 GravityBooster.FocusLost:Connect(function()
 	local v = tonumber(GravityBooster.Text)
 	if v then
