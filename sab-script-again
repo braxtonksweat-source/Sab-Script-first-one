@@ -118,7 +118,7 @@ local function draggable(frame)
 				startPos.Y.Scale,
 				startPos.Y.Offset + delta.Y
 			)
-			TweenService:Create(frame, TweenInfo.new(0.15), {Position = pos}):Play()
+			TweenService:Create(frame, TweenInfo.new(0.075), {Position = pos}):Play()
 		end
 	end)
 end
@@ -138,7 +138,7 @@ local function equip(toolName)
 	local tool = player.Backpack:FindFirstChild(toolName) or char:FindFirstChild(toolName)
 	if tool then
 		hum:EquipTool(tool)
-		task.wait(0.1)
+		task.wait(0.05)
 		tool:Activate()
 	end
 end
