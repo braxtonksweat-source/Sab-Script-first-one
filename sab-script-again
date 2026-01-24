@@ -1,0 +1,176 @@
+-- SERVICES
+local Players = game:GetService("Players")
+local UIS = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local player = Players.LocalPlayer
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "BKGui"
+ScreenGui.Parent = player:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local BKsHub = Instance.new("Frame")
+BKsHub.Name = "BKsHub"
+BKsHub.Parent = ScreenGui
+BKsHub.AnchorPoint = Vector2.new(0.5, 0.5)
+BKsHub.Position = UDim2.new(0.45, 0, 0.62, 0)
+BKsHub.Size = UDim2.new(0.1677, 0, 0.4557, 0)
+BKsHub.BackgroundColor3 = Color3.fromRGB(13,13,13)
+BKsHub.BorderSizePixel = 0
+BKsHub.Visible = false
+
+Instance.new("UICorner", BKsHub).CornerRadius = UDim.new(0.05,0)
+Instance.new("UIAspectRatioConstraint", BKsHub).AspectRatio = 0.69
+
+local bkshublabel = Instance.new("TextLabel")
+bkshublabel.Parent = BKsHub
+bkshublabel.AnchorPoint = Vector2.new(0.5,0.5)
+bkshublabel.Position = UDim2.new(0.52,0,0.083,0)
+bkshublabel.Size = UDim2.fromOffset(216,31)
+bkshublabel.BackgroundTransparency = 1
+bkshublabel.Text = "BK'S Hub"
+bkshublabel.Font = Enum.Font.SourceSansBold
+bkshublabel.TextScaled = true
+bkshublabel.TextColor3 = Color3.fromRGB(16,107,199)
+
+local autoinvisclone = Instance.new("TextButton")
+autoinvisclone.Parent = BKsHub
+autoinvisclone.AnchorPoint = Vector2.new(0.5,0.5)
+autoinvisclone.Position = UDim2.new(0.508,0,0.226,0)
+autoinvisclone.Size = UDim2.new(0.88,0,0.147,0)
+autoinvisclone.BackgroundColor3 = Color3.fromRGB(50,50,50)
+autoinvisclone.Text = "Invis Clone"
+autoinvisclone.Font = Enum.Font.SourceSansBold
+autoinvisclone.TextScaled = true
+autoinvisclone.TextColor3 = Color3.fromRGB(13,89,231)
+Instance.new("UICorner", autoinvisclone)
+
+local Toggle = Instance.new("TextButton")
+Toggle.Parent = ScreenGui
+Toggle.AnchorPoint = Vector2.new(0.5,0.5)
+Toggle.Position = UDim2.new(0.064,0,0.132,0)
+Toggle.Size = UDim2.new(0.1,0,0.095,0)
+Toggle.BackgroundColor3 = Color3.fromRGB(29,29,29)
+Toggle.Text = "Toggle"
+Toggle.Font = Enum.Font.SourceSansBold
+Toggle.TextScaled = true
+Toggle.TextColor3 = Color3.fromRGB(1,9,162)
+Instance.new("UICorner", Toggle)
+
+local BKsBooster = Instance.new("Frame")
+BKsBooster.Parent = ScreenGui
+BKsBooster.AnchorPoint = Vector2.new(0.5,0.5)
+BKsBooster.Position = UDim2.new(0.755,0,0.535,0)
+BKsBooster.Size = UDim2.new(0.398,0,0.267,0)
+BKsBooster.BackgroundColor3 = Color3.fromRGB(13,13,13)
+BKsBooster.BorderSizePixel = 0
+BKsBooster.Visible = false
+Instance.new("UICorner", BKsBooster)
+
+local WalkSpeedBooster = Instance.new("TextBox")
+WalkSpeedBooster.Parent = BKsBooster
+WalkSpeedBooster.Position = UDim2.new(0.74,0,0.384,0)
+WalkSpeedBooster.Size = UDim2.new(0.45,0,0.23,0)
+WalkSpeedBooster.PlaceholderText = "29"
+WalkSpeedBooster.TextScaled = true
+WalkSpeedBooster.BackgroundColor3 = Color3.fromRGB(29,29,29)
+Instance.new("UICorner", WalkSpeedBooster)
+
+local GravityBooster = Instance.new("TextBox")
+GravityBooster.Parent = BKsBooster
+GravityBooster.Position = UDim2.new(0.738,0,0.78,0)
+GravityBooster.Size = UDim2.new(0.47,0,0.24,0)
+GravityBooster.PlaceholderText = "120"
+GravityBooster.TextScaled = true
+GravityBooster.BackgroundColor3 = Color3.fromRGB(29,29,29)
+Instance.new("UICorner", GravityBooster)
+
+Toggle.MouseButton1Click:Connect(function()
+	BKsHub.Visible = not BKsHub.Visible
+	BKsBooster.Visible = not BKsBooster.Visible
+end)
+
+-- 🖱 DRAG FUNCTION
+local function draggable(frame)
+	local dragging, dragStart, startPos
+
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			local delta = input.Position - dragStart
+			local pos = UDim2.new(
+				startPos.X.Scale,
+				startPos.X.Offset + delta.X,
+				startPos.Y.Scale,
+				startPos.Y.Offset + delta.Y
+			)
+			TweenService:Create(frame, TweenInfo.new(0.15), {Position = pos}):Play()
+		end
+	end)
+end
+
+draggable(BKsHub)
+draggable(BKsBooster)
+draggable(Toggle)
+
+local TOOL_1 = "Invisibility Cloak"
+local TOOL_2 = "Quantum Cloner"
+local running = false
+local originalText = autoinvisclone.Text
+
+local function equip(toolName)
+	local char = player.Character or player.CharacterAdded:Wait()
+	local hum = char:WaitForChild("Humanoid")
+	local tool = player.Backpack:FindFirstChild(toolName) or char:FindFirstChild(toolName)
+	if tool then
+		hum:EquipTool(tool)
+		task.wait(0.1)
+		tool:Activate()
+	end
+end
+
+autoinvisclone.MouseButton1Click:Connect(function()
+	if running then return end
+	running = true
+
+	autoinvisclone.Text = "Invis..."
+	equip(TOOL_1)
+
+	task.wait(3)
+
+	autoinvisclone.Text = "Cloning..."
+	equip(TOOL_2)
+
+	task.wait(0.5)
+	autoinvisclone.Text = originalText
+	running = false
+end)
+
+WalkSpeedBooster.FocusLost:Connect(function()
+	local v = tonumber(WalkSpeedBooster.Text)
+	if v then
+		local hum = (player.Character or player.CharacterAdded:Wait()):WaitForChild("Humanoid")
+		hum.WalkSpeed = v
+	end
+end)
+
+GravityBooster.FocusLost:Connect(function()
+	local v = tonumber(GravityBooster.Text)
+	if v then
+		workspace.Gravity = v
+	end
+end)
