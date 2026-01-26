@@ -1,113 +1,124 @@
--- BK's InstantSteal GUI (Delta Persistent + Auto-Steal Remote)
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local UIS = game:GetService("UserInputService")
-local CoreGui = game:GetService("CoreGui")
-
--- Create ScreenGui
 local sabinstantsteal = Instance.new("ScreenGui")
 sabinstantsteal.Name = "sab instant steal"
 
--- Protect GUI for Delta/Synapse
+-- << This is the key part that keeps it persistent >>
 if syn then
-	syn.protect_gui(sabinstantsteal)
+    syn.protect_gui(sabinstantsteal)
 elseif gethui then
-	sabinstantsteal.Parent = gethui()
+    sabinstantsteal.Parent = gethui()
 else
-	sabinstantsteal.Parent = CoreGui
+    sabinstantsteal.Parent = game:GetService("CoreGui")
 end
 
+local sabinstantsteal = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local UICorner = Instance.new("UICorner")
+local WelcomeLabel = Instance.new("TextLabel")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local UICorner_2 = Instance.new("UICorner")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local TextButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+
+--Properties:
+
+sabinstantsteal.Name = "sab instant steal"
+sabinstantsteal.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 sabinstantsteal.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
--- Main Frame
-local MainFrame = Instance.new("Frame")
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = sabinstantsteal
 MainFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-MainFrame.BackgroundTransparency = 0.05
+MainFrame.BackgroundTransparency = 0.050
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MainFrame.BorderSizePixel = 0
-MainFrame.Position = UDim2.new(0.472, 0, 0.173, 0)
+MainFrame.Position = UDim2.new(0.472654909, 0, 0.173398867, 0)
 MainFrame.Size = UDim2.new(0, 314, 0, 173)
 
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 UIAspectRatioConstraint.Parent = MainFrame
-UIAspectRatioConstraint.AspectRatio = 2.02
+UIAspectRatioConstraint.AspectRatio = 2.020
 
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0.05,0)
+UICorner.CornerRadius = UDim.new(0.0500000007, 0)
 UICorner.Parent = MainFrame
 
--- Welcome Label
-local WelcomeLabel = Instance.new("TextLabel")
 WelcomeLabel.Name = "WelcomeLabel"
 WelcomeLabel.Parent = MainFrame
-WelcomeLabel.BackgroundColor3 = Color3.fromRGB(5,11,76)
-WelcomeLabel.BackgroundTransparency = 0.45
+WelcomeLabel.BackgroundColor3 = Color3.fromRGB(5, 11, 76)
+WelcomeLabel.BackgroundTransparency = 0.450
+WelcomeLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WelcomeLabel.BorderSizePixel = 0
-WelcomeLabel.Position = UDim2.new(0.19,0,0.057,0)
-WelcomeLabel.Size = UDim2.new(0,196,0,42)
+WelcomeLabel.Position = UDim2.new(0.1909668, 0, 0.0573015548, 0)
+WelcomeLabel.Size = UDim2.new(0, 196, 0, 42)
 WelcomeLabel.Font = Enum.Font.SourceSansBold
 WelcomeLabel.Text = "BK's InstantSteal"
-WelcomeLabel.TextColor3 = Color3.fromRGB(255,255,255)
+WelcomeLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 WelcomeLabel.TextScaled = true
+WelcomeLabel.TextSize = 23.000
 WelcomeLabel.TextWrapped = true
 
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 UIAspectRatioConstraint_2.Parent = WelcomeLabel
-UIAspectRatioConstraint_2.AspectRatio = 5.12
+UIAspectRatioConstraint_2.AspectRatio = 5.120
 
-local UICorner_2 = Instance.new("UICorner")
 UICorner_2.Parent = WelcomeLabel
 
-local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
 UITextSizeConstraint.Parent = WelcomeLabel
 UITextSizeConstraint.MaxTextSize = 23
 
--- Toggle Button
-local TextButton = Instance.new("TextButton")
 TextButton.Parent = MainFrame
-TextButton.BackgroundColor3 = Color3.fromRGB(5,11,76)
-TextButton.BackgroundTransparency = 0.3
+TextButton.BackgroundColor3 = Color3.fromRGB(5, 11, 76)
+TextButton.BackgroundTransparency = 0.300
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.236,0,0.582,0)
-TextButton.Size = UDim2.new(0,167,0,50)
+TextButton.Position = UDim2.new(0.236495286, 0, 0.582868278, 0)
+TextButton.Size = UDim2.new(0, 167, 0, 50)
 TextButton.Font = Enum.Font.SourceSansBold
 TextButton.Text = "Instant Steal: OFF"
-TextButton.TextColor3 = Color3.fromRGB(255,255,255)
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextScaled = true
+TextButton.TextSize = 23.000
 TextButton.TextWrapped = true
 
-local UICorner_3 = Instance.new("UICorner")
-UICorner_3.CornerRadius = UDim.new(0.05,0)
+UICorner_3.CornerRadius = UDim.new(0.0500000007, 0)
 UICorner_3.Parent = TextButton
 
-local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
 UITextSizeConstraint_2.Parent = TextButton
 UITextSizeConstraint_2.MaxTextSize = 23
 
--- =========================
--- LocalScript for Toggle & Auto-Steal
--- =========================
-local running = false
-local enabled = false -- toggle starts OFF
+-- Scripts:
 
--- Make button draggable
-do
+local function OLULJQD_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local UIS = game:GetService("UserInputService")
+	
+	local running = false
+	local enabled = false -- starts OFF
+	
+	-- Use the button this script is inside of
+	local button = script.Parent
+	if not button:IsA("TextButton") then
+		error("This script must be inside a TextButton")
+	end
+	
+	-- Optional: make button draggable
 	local dragging = false
 	local dragInput, dragStart, startPos
 	local function update(input)
 		local delta = input.Position - dragStart
-		buttonPos = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+		button.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
 			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-		TextButton.Position = buttonPos
 	end
-
-	TextButton.InputBegan:Connect(function(input)
+	
+	button.InputBegan:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then
 			dragging = true
 			dragStart = input.Position
-			startPos = TextButton.Position
+			startPos = button.Position
 			input.Changed:Connect(function()
 				if input.UserInputState == Enum.UserInputState.End then
 					dragging = false
@@ -115,54 +126,107 @@ do
 			end)
 		end
 	end)
-
-	TextButton.InputChanged:Connect(function(input)
+	
+	button.InputChanged:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseMovement then
 			dragInput = input
 		end
 	end)
-
+	
 	UIS.InputChanged:Connect(function(input)
 		if input == dragInput and dragging then
 			update(input)
 		end
 	end)
+	
+	-- Function to instantly click
+	local function instantClick()
+		if running then return end
+		running = true
+	
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoid = character:WaitForChild("Humanoid")
+		local backpack = player:WaitForChild("Backpack")
+	
+		local tool = backpack:FindFirstChild("Flash Teleport")
+		if not tool then
+			warn("Flash Teleport not found")
+			running = false
+			return
+		end
+		humanoid:EquipTool(tool)
+	
+		tool:Activate()
+		task.wait(0.01)
+		tool:Deactivate()
+	
+		running = false
+	end
+	
+	-- Toggle button click
+	button.MouseButton1Click:Connect(function()
+		enabled = not enabled
+		button.Text = enabled and "Auto Steal: ON" or "Auto Steal: OFF"
+	end)
+	
+	-- Listen to sounds in ReplicatedStorage.Sounds.Animals
+	local soundsFolder = ReplicatedStorage:WaitForChild("Sounds"):WaitForChild("Animals")
+	
+	local function connectSound(sound)
+		if not sound:IsA("Sound") then return end
+		sound.Played:Connect(function()
+			if enabled then
+				instantClick()
+			end
+		end)
+	end
+	
+	-- Connect existing sounds
+	for _, sound in ipairs(soundsFolder:GetChildren()) do
+		connectSound(sound)
+	end
+	
+	-- Connect new sounds dynamically
+	soundsFolder.ChildAdded:Connect(connectSound)
+	
 end
+coroutine.wrap(OLULJQD_fake_script)()
+local function ITTCXK_fake_script() -- MainFrame.LocalScript 
+	local script = Instance.new('LocalScript', MainFrame)
 
--- Function to fire the steal remote
-local function instantSteal()
-	if running then return end
-	running = true
-
-	-- Your exact remote path
-	local grabRemote = ReplicatedStorage:WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/StealsService/Grab")
-	grabRemote:FireServer() -- Fire instantly
-
-	running = false
-end
-
--- Toggle button click
-TextButton.MouseButton1Click:Connect(function()
-	enabled = not enabled
-	TextButton.Text = enabled and "Auto Steal: ON" or "Auto Steal: OFF"
-end)
-
--- Listen to animal sounds
-local soundsFolder = ReplicatedStorage:WaitForChild("Sounds"):WaitForChild("Animals")
-
-local function connectSound(sound)
-	if not sound:IsA("Sound") then return end
-	sound.Played:Connect(function()
-		if enabled then
-			instantSteal()
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
 		end
 	end)
 end
-
--- Connect existing sounds
-for _, sound in ipairs(soundsFolder:GetChildren()) do
-	connectSound(sound)
-end
-
--- Connect new sounds dynamically
-soundsFolder.ChildAdded:Connect(connectSound)
+coroutine.wrap(ITTCXK_fake_script)()
