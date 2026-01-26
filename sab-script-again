@@ -1,13 +1,9 @@
-local sabinstantsteal = Instance.new("ScreenGui")
-sabinstantsteal.Name = "sab instant steal"
-
--- << This is the key part that keeps it persistent >>
 if syn then
     syn.protect_gui(sabinstantsteal)
 elseif gethui then
     sabinstantsteal.Parent = gethui()
 else
-    sabinstantsteal.Parent = game:GetService("CoreGui")
+    sabinstantsteal.Parent = CoreGui
 end
 
 local sabinstantsteal = Instance.new("ScreenGui")
