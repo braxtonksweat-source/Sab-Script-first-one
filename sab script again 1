@@ -1,3 +1,4 @@
+
 local sabinstantsteal = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
@@ -68,7 +69,7 @@ TextButton.TextScaled = true
 TextButton.TextSize = 23.000
 TextButton.TextWrapped = true
 
-UICorner_3.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner_3.CornerRadius = UDim.new(0.050000000, 0)
 UICorner_3.Parent = TextButton
 
 UITextSizeConstraint_2.Parent = TextButton
@@ -136,9 +137,9 @@ local function OLULJQD_fake_script() -- TextButton.LocalScript
 		local humanoid = character:WaitForChild("Humanoid")
 		local backpack = player:WaitForChild("Backpack")
 	
-		local tool = backpack:FindFirstChild("Flash Teleport")
+		local tool = backpack:FindFirstChild("Quantum Cloner")
 		if not tool then
-			warn("Flash Teleport not found")
+			warn("Quantum Cloner not found")
 			running = false
 			return
 		end
