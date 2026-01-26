@@ -69,7 +69,7 @@ TextButton.TextScaled = true
 TextButton.TextSize = 23.000
 TextButton.TextWrapped = true
 
-UICorner_3.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner_3.CornerRadius = UDim.new(0.050000000, 0)
 UICorner_3.Parent = TextButton
 
 UITextSizeConstraint_2.Parent = TextButton
