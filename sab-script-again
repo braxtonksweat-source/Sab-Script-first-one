@@ -137,9 +137,9 @@ local function OLULJQD_fake_script() -- TextButton.LocalScript
 		local humanoid = character:WaitForChild("Humanoid")
 		local backpack = player:WaitForChild("Backpack")
 	
-		local tool = backpack:FindFirstChild("Flash Teleport")
+		local tool = backpack:FindFirstChild("Quantum Cloner")
 		if not tool then
-			warn("Flash Teleport not found")
+			warn("Quantum Cloner not found")
 			running = false
 			return
 		end
