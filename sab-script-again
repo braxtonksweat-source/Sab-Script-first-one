@@ -138,8 +138,18 @@ local function OLULJQD_fake_script() -- TextButton.LocalScript
 			update(input)
 		end
 	end)
+	- remote function
+local function instantSteal()
+    if running then return end
+    running = true
+
+    local grabRemote = ReplicatedStorage:WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/StealsService/Grab")
+    grabRemote:FireServer() -- Fire the remote
+
+    running = false
+end
 	
-	-- Function to instantly click
+-- Function to instantly click
 	local function instantClick()
 		if running then return end
 		running = true
