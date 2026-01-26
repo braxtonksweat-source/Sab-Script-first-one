@@ -1,11 +1,3 @@
-if syn then
-    syn.protect_gui(sabinstantsteal)
-elseif gethui then
-    sabinstantsteal.Parent = gethui()
-else
-    sabinstantsteal.Parent = CoreGui
-end
-
 local sabinstantsteal = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
